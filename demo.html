@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is the title</title>
+		<link rel="stylesheet" href="mystyle.css">
+    </head>
+    <body>
+		<div>
+			<h2>☆★☆匯率換算器☆★☆</h2>
+			<p>請輸入台幣金額</p>
+			<input id="TWD" type="text" placeholder="ex. 500" value=""/>
+			<input id="btn" type="button" value="轉換">
+			<hr>
+			<p>美金:</p><p id="show1"></p>
+			<p>歐元:</p><p id="show2"></p>
+			<p>日幣:</p><p id="show3"></p>
+			<p>韓元:</p><p id="show4"></p>
+			<p>澳幣:</p><p id="show5"></p>
+		</div>
+		<script>
+		/*
+			var show1 = document.querySelector('.show1');
+			var show2 = document.querySelector('.show2');
+			var show3 = document.querySelector('.show3');
+			var show4 = document.querySelector('.show4');
+			var show5 = document.querySelector('.show5');
+		*/
+		
+			document.getElementById('btn').onclick = function() {
+				
+				var TWD = parseInt(document.getElementById('TWD').value)
+				
+				var show1 = document.querySelector('.show1');
+				var show2 = document.querySelector('.show2');
+				var show3 = document.querySelector('.show3');
+				var show4 = document.querySelector('.show4');
+				var show5 = document.querySelector('.show5');
+				
+				var result1 = TWD*30.91/*USD*/;
+				show1.innerHTML = result1.toFixed(2);
+				var result2 = TWD*33.4/*EUR*/;
+				show2.innerHTML = result2.toFixed(2);
+				var result3 = TWD*0.2216/*JPY*/;
+				show3.innerHTML = result3.toFixed(2);
+				var result4 = TWD*0.02534/*KRW*/;
+				show4.innerHTML = result4.toFixed(2);
+				var result5 = TWD*20.41/*AUD*/;
+				show5.innerHTML = result5.toFixed(2);
+				/*
+				var xhttp = new XMLHttpRequest();
+				
+				xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 &amp;&amp; xhttp.status == 200) {
+						var xmlDoc = xhttp.responseXML; //將讀取到的 XML 文件存進 xmlDoc 變數內
+					}
+				}
+				
+				var xmlString = "<root><usd></usd><eur></eur><jpy></jpy><krw></krw><aud></aud></root>";
+				var xmlDoc = (new DOMParser()).parseFromString(xmlString, "text/xml");
+				
+				var USD = xmlDoc.getElementsByTagName("usd");
+				var EUR = xmlDoc.getElementsByTagName("eur");
+				var JPY = xmlDoc.getElementsByTagName("jpy");
+				var KRW = xmlDoc.getElementsByTagName("krw");
+				var AUD = xmlDoc.getElementsByTagName("aud");
+				
+				xhttp.open("GET", "rate.xml", true);
+				xhttp.send();
+				
+				var result1 = TWD*USD;
+				show1.innerHTML = result1;
+				var result2 = TWD*EUR;
+				show2.innerHTML = result2;
+				var result3 = TWD*JPY;
+				show3.innerHTML = result3;
+				var result4 = TWD*KRW;
+				show4.innerHTML = result4;
+				var result5 = TWD*AUD;
+				show5.innerHTML = result5;
+				*/
+			}
+		</script>
+    </body>
+</html>
